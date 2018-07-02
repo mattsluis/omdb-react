@@ -1,0 +1,24 @@
+body {
+    margin: 0 auto;
+    padding: 0;
+
+    #app {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+//\\//\\**//\\//\\**//\\//\\** CONTAINERS **//\\//\\**//\\//\\**//\\//\\
+@import "./components/containers/home/style.scss";
+
+//\\//\\**//\\//\\**//\\//\\** CORE COMPONENTS **//\\//\\**//\\//\\**//\\//\\
+@import "./components/core/button/style.scss";
+@import "./components/core/input/style.scss";
+@import "./components/core/modal/style.scss";
+
+//\\//\\**//\\//\\**//\\//\\** COMPONENTS **//\\//\\**//\\//\\**//\\//\\
+
+@import "./components/omdb/movie/style.scss";
+@import "./components/omdb/movie_show/style.scss";
+@import "./components/omdb/search_box/style.scss";
+@import "./components/omdb/search_results/style.scss";

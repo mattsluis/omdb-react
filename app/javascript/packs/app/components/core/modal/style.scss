@@ -1,0 +1,59 @@
+$wizard-bg: rgb(216,216,216);
+$modal-bg: rgba(0,0,0,0.4);
+$shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+$fiord: rgb(58,75,95);
+
+.modalBg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: $modal-bg;
+    top: 0;
+    left: 0;
+    padding-top: 50px;
+
+    .modalBox {
+        width: 80%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        position: absolute;
+        box-shadow: $shadow;
+
+        .modalHeader {
+            background-color: $fiord;
+            display: flex;
+            padding: 5px;
+
+            .titleBox {
+                flex: 90%;
+
+                .modalTitle {
+                    font-size: 20px;
+                    color: white;
+                }
+            }
+
+            .closeBox {
+                flex: 10%;
+                .close {
+                    float: right;
+                    color: white;
+                    cursor: pointer;
+                    &:hover {
+                        color: black;
+                    }
+                }
+            }
+
+        }
+        .modalBody {
+            background-color: $wizard-bg;
+            padding: 5px;
+        }
+        .modalFooter {
+            background-color: $wizard-bg;
+        }
+    }
+}
