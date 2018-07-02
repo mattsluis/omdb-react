@@ -11,7 +11,7 @@ export default class SearchResults extends React.Component {
     }
 
     render() {
-        
+
 
         return (
             <div>
@@ -24,28 +24,28 @@ export default class SearchResults extends React.Component {
 }
 
 
-
-
-
-    generateList() {
-        const { todos, todo } = this.props;
-
-        const list = todos.map((todo) => {
-            return (
-                <li key={todo.id} className={Style.listEl} >
-                    <Todo
-                        todo={todo}
-                        handleDelete={(event) => this.onDelete(todo.id)}
-                        handleUpdate={this.onUpdate}
-                    />
-                </li>
-            )
-        });
-        return list;
-    }
-
-    render() {
-        return this.generateList();
-    }
-
-}
+//
+//
+//
+//     generateList() {
+//         const { todos, todo } = this.props;
+//
+//         const list = todos.map((todo) => {
+//             return (
+//                 <li key={todo.id} className={Style.listEl} >
+//                     <Todo
+//                         todo={todo}
+//                         handleDelete={(event) => this.onDelete(todo.id)}
+//                         handleUpdate={this.onUpdate}
+//                     />
+//                 </li>
+//             )
+//         });
+//         return list;
+//     }
+//
+//     render() {
+//         return this.generateList();
+//     }
+//
+// }

@@ -1,13 +1,21 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import Home from 'components/containers/home/home';
+import Routes from 'components/containers/index.js'
+
+import {
+    Home,
+    SignUp,
+    SignIn,
+} from 'components/containers/index';
 
 const App = (props) => (
     <BrowserRouter>
-        <div>
+        <Switch>
             <Route exact path='/' component={Home} />
-        </div>
+            <Route exact path='/' component={SignUp} />
+            <Route exact path='/' component={SignIn} />
+        </Switch>
     </BrowserRouter>
 )
 
