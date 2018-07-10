@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import Movie from 'components/omdb/movie/movie';
 
 import Style from './style.scss';
 
-export default class SearchResults extends React.Component {
+export default class SearchResults extends Component {
     constructor(props) {
         super(props);
         this.state = {};

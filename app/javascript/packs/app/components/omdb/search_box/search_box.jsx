@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import Button from 'components/core/button/button';
 import Input from 'components/core/input/input';
@@ -8,7 +8,7 @@ import OmbdApi from 'middleware/omdb_api';
 
 import Style from './style.scss';
 
-export default class SearchBox extends React.Component {
+export default class SearchBox extends Component {
     constructor(props) {
         super(props);
         this.state = {

@@ -10,4 +10,5 @@ Rails.application.routes.draw do
             #resources :todos, only: [:index, :create, :destroy, :update]
         end
     end
+    get '*path', to: 'home#dashboard'
 end
