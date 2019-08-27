@@ -1,51 +1,40 @@
 import React, { Component } from 'react';
 
-import Movie from 'components/omdb/movie/movie';
+import { Link } from 'react-router-dom';
 
 import Style from './style.scss';
 
 export default class SearchResults extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+        };
+    }
+
+    generateResults() {
+        const { results } = this.props;
+        console.log(results)
+
+        const list = results.map((movie, index) => {
+            return (
+                <li key={index}>
+                    <h5>{movie.Title}</h5>
+                    <p></p>
+                    <Link to={movie.imdbID}>more details</Link>
+                </li>
+            )
+        })
+
+        return list;
     }
 
     render() {
 
 
         return (
-            <div>
-                <ul>
-                    <Movie/>
-                </ul>
-            </div>
+            <ul>
+                {this.generateResults()}
+            </ul>
         )
     }
 }
-
-
-//
-//
-//
-//     generateList() {
-//         const { todos, todo } = this.props;
-//
-//         const list = todos.map((todo) => {
-//             return (
-//                 <li key={todo.id} className={Style.listEl} >
-//                     <Todo
-//                         todo={todo}
-//                         handleDelete={(event) => this.onDelete(todo.id)}
-//                         handleUpdate={this.onUpdate}
-//                     />
-//                 </li>
-//             )
-//         });
-//         return list;
-//     }
-//
-//     render() {
-//         return this.generateList();
-//     }
-//
-// }

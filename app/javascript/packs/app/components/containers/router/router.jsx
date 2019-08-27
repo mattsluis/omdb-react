@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import {
     Home,
+    Details,
     SignUp,
     LogIn,
     Profile,
@@ -18,6 +19,7 @@ export default class Router extends Component {
         return(
             <Switch>
                 <Route exact path='/' component={Home} />
+                <Route exact path='/:movieId' component={Details} />
                 <Route exact path='/sign_up' component={SignUp} />
                 <Route exact path='/log_in' component={LogIn} />
                 <Route exact path='/profile' component={Profile} />

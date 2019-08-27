@@ -8,8 +8,14 @@ body {
     }
 }
 
+//\\//\\**//\\//\\**//\\//\\** LAYOUTS **//\\//\\**//\\//\\**//\\//\\
+@import "./components/layouts/header/style.scss";
+
+
 //\\//\\**//\\//\\**//\\//\\** CONTAINERS **//\\//\\**//\\//\\**//\\//\\
 @import "./components/containers/pages/home/style.scss";
+
+
 
 //\\//\\**//\\//\\**//\\//\\** CORE COMPONENTS **//\\//\\**//\\//\\**//\\//\\
 @import "./components/core/button/style.scss";

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Button from 'components/core/button/button';
 import Input from 'components/core/input/input';
 
-import {createUser} from 'middleware/user_api';
+import { createUser } from 'middleware/user_api';
 
 export default class SignUp extends Component {
     constructor(props) {
@@ -35,7 +35,6 @@ export default class SignUp extends Component {
             email: {
                 label: 'Email',
                 type: 'email',
-                name: 'email',
                 placeholder: 'email@email.com',
                 inputChange: (event) => {this.handleChange({email: event.target.value})},
             },

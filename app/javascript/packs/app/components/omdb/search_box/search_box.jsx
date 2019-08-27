@@ -3,8 +3,10 @@ import React, { Component } from 'react';
 import Button from 'components/core/button/button';
 import Input from 'components/core/input/input';
 
+import Results from 'components/omdb/search_results/search_results';
 
-import OmbdApi from 'middleware/omdb_api';
+
+import OmbdAPI from 'middleware/omdb_api';
 
 import Style from './style.scss';
 
@@ -27,12 +29,11 @@ export default class SearchBox extends Component {
 
     handleSearch = () => {
         const term = this.state.search.term;
-        OmbdApi.getMovies(term)
+        OmbdAPI.getMovies(term)
             .then( response => {
                 const results = response.Search;
-                this.setState({ search: results });
+                this.setState({ search: { results: results, term: term }});
             });
-
     }
 
     render() {
@@ -49,6 +50,9 @@ export default class SearchBox extends Component {
             <div>
                 <Input {...searchInputProps}/>
                 <Button {...searchBtnProps}/>
+                <Results
+                    results={this.state.search.results}
+                />
             </div>
         )
     }
