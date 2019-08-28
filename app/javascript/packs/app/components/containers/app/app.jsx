@@ -33,20 +33,20 @@ export default class App extends Component {
     //         })
     // }
 
-    isLoggedIn() {
-        validateUser()
-            .then((response) => {
-                console.log(`response: ${JSON.stringify(response)}`);
-                this.setState({
-                    user: {
-                        isloggedIn: response.signedIn,
-                    },
-                });
-            })
-            .fail(() => {
-                console.log("no valid token");
-            })
-    }
+    // isLoggedIn() {
+    //     validateUser()
+    //         .then((response) => {
+    //             console.log(`response: ${JSON.stringify(response)}`);
+    //             this.setState({
+    //                 user: {
+    //                     isloggedIn: response.signedIn,
+    //                 },
+    //             });
+    //         })
+    //         .fail(() => {
+    //             console.log("no valid token");
+    //         })
+    // }
 
 
 

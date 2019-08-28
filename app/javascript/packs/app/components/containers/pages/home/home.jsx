@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import { Link } from 'react-router-dom';
 
@@ -6,25 +7,28 @@ import Button from 'components/core/button/button';
 import Input from 'components/core/input/input';
 
 import SearchBox from 'components/omdb/search_box/search_box';
+import SearchResults from 'components/omdb/search_results/search_results';
 
 import Style from './style.scss';
 
-export default class Home extends Component {
+class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            search: {
-                term: "",
-                result: {},
-            }
-        };
+        this.state = {};
     }
 
     render() {
         return (
             <div>
                 <SearchBox />
+                <SearchResults/>
             </div>
         )
     }
 }
+
+const mapStateToProps = state => ({
+  loading: state.movieReducer.isLoading
+});
+
+export default connect(mapStateToProps)(Home);
