@@ -1,8 +1,15 @@
 .movieContainer {
+    text-align: center;
     .movieHeader {
-        text-align: center;
-    }
-    .plot {
 
     }
+    .stars {
+
+    }
+    .plot {
+        text-align: left;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
 }
