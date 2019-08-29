@@ -24,8 +24,8 @@ gem 'webpacker'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 gem 'responders'
-gem 'devise_token_auth'
-gem 'omniauth'
+# gem 'devise_token_auth'
+# gem 'omniauth'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
