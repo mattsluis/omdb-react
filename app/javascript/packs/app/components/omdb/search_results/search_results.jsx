@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { Link } from 'react-router-dom';
 
+import Movie from '../movie/movie';
+
 import Style from './style.scss';
 
 class SearchResults extends Component {
@@ -12,30 +14,22 @@ class SearchResults extends Component {
             results: [],
         };
     }
-    componentDidMount() {
-        console.log("mounting. here are props.", this.props);
-    }
 
     generateResults() {
-        console.log("generating results", this.props)
         const { results } = this.props;
         const list = results.map((movie, index) => {
             return (
                 <li key={index}>
-                    <h5>{movie.Title}</h5>
-                    <p></p>
-                    <Link to={movie.imdbID}>more details</Link>
+                    <Movie data={movie}/>
                 </li>
             )
         })
         return list;
-        return null
     }
 
     render() {
-        console.log("rendering", this.props)
         return (
-            <ul>
+            <ul className={Style.resultsList}>
                 {this.generateResults()}
             </ul>
         )
@@ -44,9 +38,9 @@ class SearchResults extends Component {
 
 const mapStateToProps = state => {
     return {
+        query: state.movieReducer.query,
         results: state.movieReducer.results
     }
 };
-
 
 export default connect(mapStateToProps)(SearchResults);

@@ -1,0 +1,21 @@
+//movie Component
+.movieLinks {
+    display: inline-block;
+    width: 312px;
+    padding: 5px;
+    margin: 5px 0px 5px 0px;
+    border: 1px solid black;
+    .link {
+        text-decoration: none;
+        color: black;
+        .title {
+            margin-bottom: 0;
+        }
+    }
+    .year {
+        font-size: 12px;
+    }
+    .poster {
+        margin-top: 5px;
+    }
+}

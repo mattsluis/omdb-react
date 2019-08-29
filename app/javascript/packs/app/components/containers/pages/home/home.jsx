@@ -18,10 +18,14 @@ class Home extends Component {
     }
 
     render() {
+        const { isLoading } = this.props;
+
         return (
             <div>
+                <h1 className={Style.welcomeHeader}>Welcome to Movie Search</h1>
                 <SearchBox />
-                <SearchResults/>
+                <SearchResults />
+
             </div>
         )
     }

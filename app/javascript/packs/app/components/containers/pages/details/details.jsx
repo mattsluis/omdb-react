@@ -1,26 +1,43 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import MovieShow from 'components/omdb/movie_show/movie_show';
 
-import OmdbAPI from 'middleware/omdb_api';
+import { getDetails } from 'actions/omdb_actions';
 
 import Style from './style.scss';
 
-export default class Details extends Component {
+class Details extends Component {
     constructor(props) {
         super(props);
         this.state = {};
     }
 
+    componentDidMount() {
+        const movieId = this.props.match.params.movieId;
+        this.props.getDetails(movieId);
 
+    }
+    renderData() {
+        const { details } = this.props;
+        return (
+            <MovieShow data={details}/>
+        )
+    }
 
     render() {
-        let movieId = this.props.match.url.substr(1);
-
         return (
             <div>
-                <MovieShow movieId={movieId}/>
+                {this.renderData()}
             </div>
         )
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        details: state.movieReducer.details,
+    }
+};
+
+export default connect(mapStateToProps, { getDetails })(Details);

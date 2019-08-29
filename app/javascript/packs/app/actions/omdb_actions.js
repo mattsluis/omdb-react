@@ -11,23 +11,24 @@ export const getMovies = searchTerm => dispatch => {
     axios
         .get(url)
         .then(response => {
-            console.log(response.data.Search)
             dispatch({
                 type: SET_MOVIES,
-                payload: response.data.Search
+                payload: response.data.Search,
             })
         })
         .catch(err => console.log(err));
 };
 
-
-export const getDetails = movieId => {
-    const url = `${DETAILS_URL+searchTerm}`;
-    const urlTwo = `http://www.omdbapi.com/?apikey=${OMDB_KEY}&i=${movieId}&plot=full`;
-    console.log(url,urlTwo)
-    return fetch(url).then( response => {
-        return response.json();
-    }).catch( error => {
-        return error;
-    })
+export const getDetails = movieId => dispatch => {
+    const url = `${DETAILS_URL+movieId}`;
+    dispatch({ type: START_SET_DETAILS });
+    axios
+        .get(url)
+        .then(response => {
+            dispatch({
+                type: SET_DETAILS,
+                payload: response.data,
+            })
+        })
+        .catch(err => console.log(err));
 }

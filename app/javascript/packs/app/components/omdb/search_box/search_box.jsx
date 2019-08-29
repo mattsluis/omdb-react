@@ -31,16 +31,19 @@ class SearchBox extends Component {
 
     render() {
         const searchInputProps = {
+            placeholder: 'Pulp Fiction',
             inputChange: (event) => {this.handleChange({term: event.target.value})},
+            classNames: 'searchInput',
         };
 
         const searchBtnProps = {
-            buttonText: "Search",
+            buttonText: "Search Movies",
             onClick: this.handleSearch,
+            classNames: 'searchBtn',
         };
 
         return (
-            <div>
+            <div className={Style.searchBox}>
                 <Input {...searchInputProps}/>
                 <Button {...searchBtnProps}/>
             </div>
